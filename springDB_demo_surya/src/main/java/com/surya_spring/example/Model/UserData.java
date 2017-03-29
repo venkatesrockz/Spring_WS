@@ -14,16 +14,17 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "user_data")
-@Getter @Setter
+@Getter @Setter @ToString
 @JsonSerialize
-public class UserData implements Serializable {
+public class UserData {
 	/**
 	 * Serialization ID
 	 */
-	private static final long serialVersionUID = 8133309714576433031L;
+	/*private static final long serialVersionUID = 8133309714576433031L;*/
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)

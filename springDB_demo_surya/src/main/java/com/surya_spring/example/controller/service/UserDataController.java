@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.surya_spring.example.Model.UserData;
@@ -20,17 +21,17 @@ public class UserDataController {
 	private UserDataService userDataService;
 	
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity getAllUserData(){
+	public List<UserData> getAllUserData(){
 		List<UserData> userList = userDataService.getAllUserData();
 		//System.out.println("User List is :"+userList.get(0).toString());
-		return new ResponseEntity(userList, HttpStatus.OK);
+		return userList;
 	}
 	
 	@RequestMapping(value = "/getOne/{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity getSingleUserData(@PathVariable(value="id") Long id){
+	public UserData getSingleUserData(@PathVariable(value="id") Long id){
 		UserData userData = userDataService.getUser(id);
 		//System.out.println("User List is :"+userList.get(0).toString());
-		return new ResponseEntity(userData, HttpStatus.OK);
+		return userData;
 	}
 
 }
