@@ -33,5 +33,11 @@ public class UserDataController {
 		//System.out.println("User List is :"+userList.get(0).toString());
 		return userData;
 	}
+	
+	@RequestMapping(value = "/addUser", method = RequestMethod.GET, consumes = "application/json")
+	public UserData addUserData(UserData userIn){
+		UserData userOut=userDataService.addUser(userIn);		
+		return userOut;
+	}
 
 }

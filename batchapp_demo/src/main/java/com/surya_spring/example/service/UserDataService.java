@@ -28,5 +28,11 @@ public class UserDataService {
 		UserData user = userRepository.findOne(a);
 		return user;		
 	}
+	
+	@Transactional
+	public UserData addUser(UserData userIn){
+		UserData user = userRepository.save(userIn);
+		return user;
+	}
 
 }
