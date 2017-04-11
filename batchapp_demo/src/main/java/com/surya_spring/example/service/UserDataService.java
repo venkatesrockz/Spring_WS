@@ -30,9 +30,21 @@ public class UserDataService {
 	}
 	
 	@Transactional
-	public UserData addUser(UserData userIn){
+	public UserData saveOrUpdateUser(UserData userIn){
 		UserData user = userRepository.saveAndFlush(userIn);
 		return user;
 	}
+	@Transactional
+	public String deleteUser(Long id){
+		String returnValue = "Fail";
+		try{
+		userRepository.delete(id);
+		returnValue = "Success";
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return returnValue;
+	}
+	
 
 }

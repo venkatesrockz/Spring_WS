@@ -33,9 +33,9 @@ public class UserDataController {
 		return userData;
 	}
 	
-	@RequestMapping(value = "/addUser", method = RequestMethod.POST, consumes = "application/json")
-	public UserData addUserData(@RequestBody UserData userIn){
-		UserData userOut=userDataService.addUser(userIn);		
+	@RequestMapping(value = "/saveorUpdateUser", method = RequestMethod.POST, consumes = "application/json")
+	public UserData saveOrUpdateUserData(@RequestBody UserData userIn){
+		UserData userOut=userDataService.saveOrUpdateUser(userIn);
 		return userOut;
 	}
 
