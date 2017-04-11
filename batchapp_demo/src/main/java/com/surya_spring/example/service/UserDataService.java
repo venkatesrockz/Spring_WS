@@ -31,7 +31,7 @@ public class UserDataService {
 	
 	@Transactional
 	public UserData addUser(UserData userIn){
-		UserData user = userRepository.save(userIn);
+		UserData user = userRepository.saveAndFlush(userIn);
 		return user;
 	}
 
