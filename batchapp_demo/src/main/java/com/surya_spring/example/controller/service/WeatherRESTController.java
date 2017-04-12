@@ -14,7 +14,7 @@ public class WeatherRESTController {
 	@Autowired
 	private WeatherWSClientComponent weatherwsService;
 	
-	@RequestMapping(value = "/getAllCitiesByCountry", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/getAllCitiesByCountry", method = RequestMethod.POST, produces = "application/json")
 	public String getAllCitiesByCountryName(@RequestBody String countryIn){
 		String countries = weatherwsService.getCitiesByCountry(countryIn);
 		return countries;

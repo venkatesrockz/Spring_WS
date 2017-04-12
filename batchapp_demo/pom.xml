@@ -95,7 +95,7 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>http://www.webservicex.com/globalweather.asmx?wsdl</wsdl>
-                                   <wsdlLocation>classpath:wsdl/generated.wsdl</wsdlLocation>
+                                   <!-- <wsdlLocation>classpath:wsdl/generated.wsdl</wsdlLocation>-->
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
