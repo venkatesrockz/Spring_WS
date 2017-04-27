@@ -50,5 +50,10 @@ public class UserDataService {
 		return returnValue;
 	}
 	
+	@Transactional(readOnly=true)
+	public String getUserStrtname(String name){
+		String user = userRepository.getStreetName_ForUserName(name);
+		return user;		
+	}	
 
 }

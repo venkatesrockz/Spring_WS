@@ -38,5 +38,11 @@ public class UserDataController {
 		UserData userOut=userDataService.saveOrUpdateUser(userIn);
 		return userOut;
 	}
+	
+	@RequestMapping(value = "/getSingleUsrStrtName/{name}", method = RequestMethod.GET, produces = "application/json")
+	public String getSingleUsrStrtName(@PathVariable(value="name") String name){
+		String userData = userDataService.getUserStrtname(name);
+		return userData;
+	}
 
 }

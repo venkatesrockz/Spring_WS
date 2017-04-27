@@ -29,6 +29,19 @@ public class UserAddress implements Serializable {
 	private UserData userdata;
 	
 
+	/**
+	 * @param doorNo
+	 * @param streetName
+	 * @param city
+	 * @param country
+	 */
+	public UserAddress(String doorNo, String streetName, String city, String country) {
+		this.doorNo = doorNo;
+		this.streetName = streetName;
+		this.city = city;
+		this.country = country;
+	}
+
 	@Id
 	@Column(name = "addr_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -99,6 +112,12 @@ public class UserAddress implements Serializable {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	/**
+	 * 
+	 */
+	public UserAddress() {
 	}
 	
 	

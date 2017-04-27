@@ -27,6 +27,17 @@ public class UserData implements Serializable{
 	 */
 	private static final long serialVersionUID = 8133309714576433031L;
 	
+	/**
+	 * @param userName
+	 * @param userEmail
+	 * @param userage
+	 */
+	public UserData(String userName, String userEmail, String userage) {
+		this.userName = userName;
+		this.userEmail = userEmail;
+		this.userage = userage;
+	}
+
 	@Id
 	@Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -43,6 +54,12 @@ public class UserData implements Serializable{
 	@XmlElement
 	private String userEmail;
 	
+	/**
+	 * 
+	 */
+	public UserData() {
+	}
+
 	@Column(name="user_age")
 	@XmlElement
 	private String userage;
