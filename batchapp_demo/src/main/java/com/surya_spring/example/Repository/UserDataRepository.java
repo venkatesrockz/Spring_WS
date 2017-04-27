@@ -13,4 +13,5 @@ import com.surya_spring.example.Model.UserData;
  */
 public interface UserDataRepository extends JpaRepository<UserData, Long>{
 
+	
 }

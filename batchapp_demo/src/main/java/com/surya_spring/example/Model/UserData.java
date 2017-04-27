@@ -8,9 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import lombok.NonNull;
 
+
+@XmlRootElement(name="user_data")
+@XmlAccessorType(XmlAccessType.NONE)
 @Entity
 @Table(name = "user_data")
 public class UserData implements Serializable{
@@ -22,16 +30,26 @@ public class UserData implements Serializable{
 	@Id
 	@Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@XmlElement
     private Long userId;
 
 	@Column(name = "user_name")
 	@NonNull
+	@XmlElement
 	private String userName;
 
 	@Column(name = "user_email")
 	@NonNull
+	@XmlElement
 	private String userEmail;
+	
+	@Column(name="user_age")
+	@XmlElement
+	private String userage;
+	
+	
 
+	@XmlAttribute
 	public Long getUserId() {
 		return userId;
 	}
@@ -55,4 +73,13 @@ public class UserData implements Serializable{
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	
+	public String getUserage() {
+		return userage;
+	}
+
+	public void setUserage(String userage) {
+		this.userage = userage;
+	}
+
 }

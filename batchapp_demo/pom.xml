@@ -67,44 +67,25 @@
 			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
 		<!-- Apache CXF -->
-		<!-- <dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-			<version>${cxf.version}</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-spring-boot-starter-jaxws</artifactId> 
+			<version>${cxf.version}</version> </dependency> -->
 		<!-- <dependency> <groupId>io.springfox</groupId> <artifactId>springfox-swagger2</artifactId> 
 			<version>2.4.0</version> </dependency> -->
 	</dependencies>
 
 	<build>
 		<plugins>
-			 <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-           <!--  <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${cxf.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <sourceRoot>${project.build.directory}/generated/globalWeather</sourceRoot>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>http://www.webservicex.com/globalweather.asmx?wsdl</wsdl>
-                                   <wsdlLocation>classpath:wsdl/generated.wsdl</wsdlLocation>
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin> -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.cxf</groupId> <artifactId>cxf-codegen-plugin</artifactId> 
+				<version>${cxf.version}</version> <executions> <execution> <id>generate-sources</id> 
+				<phase>generate-sources</phase> <configuration> <sourceRoot>${project.build.directory}/generated/globalWeather</sourceRoot> 
+				<wsdlOptions> <wsdlOption> <wsdl>http://www.webservicex.com/globalweather.asmx?wsdl</wsdl> 
+				<wsdlLocation>classpath:wsdl/generated.wsdl</wsdlLocation> </wsdlOption> 
+				</wsdlOptions> </configuration> <goals> <goal>wsdl2java</goal> </goals> </execution> 
+				</executions> </plugin> -->
 		</plugins>
 	</build>
 
