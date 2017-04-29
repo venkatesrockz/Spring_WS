@@ -32,6 +32,13 @@ public class UserDataController {
 		UserData userData = userDataService.getUser(id);
 		return userData;
 	}
+	@RequestMapping(value = "/getOne/getAge/{id}", method = RequestMethod.GET, produces = "application/json")
+	public Long getSingleUserAge(@PathVariable(value="id") Long id){
+		Long userData = userDataService.getSingleUserAge(id);
+		return userData;
+	}
+	
+	
 	
 	@RequestMapping(value = "/saveorUpdateUser", method = RequestMethod.POST, consumes = "application/json")
 	public UserData saveOrUpdateUserData(@RequestBody UserData userIn){

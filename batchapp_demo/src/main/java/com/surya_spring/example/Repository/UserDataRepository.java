@@ -20,4 +20,9 @@ public interface UserDataRepository extends JpaRepository<UserData, Long>{
 			+ "and ud.userId = ua.userdata.userId")
 	public String getStreetName_ForUserName(@Param(value = "username") String username) throws DataAccessResourceFailureException;
 	
+	@Query("SELECT ua.userage from UserData ua where ua.userId=:id")
+	public Long getSingleUserAgeque(@Param(value = "id") Long id) throws DataAccessResourceFailureException;
+	
+	
+	
 }

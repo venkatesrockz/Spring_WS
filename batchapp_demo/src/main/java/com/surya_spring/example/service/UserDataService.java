@@ -33,6 +33,9 @@ public class UserDataService {
 		return user;		
 	}
 	
+	
+		
+	
 	@Transactional
 	public UserData saveOrUpdateUser(UserData userIn){
 		UserData user = userRepository.saveAndFlush(userIn);
@@ -55,5 +58,11 @@ public class UserDataService {
 		String user = userRepository.getStreetName_ForUserName(name);
 		return user;		
 	}	
+	
+	@Transactional(readOnly=true)
+	public Long getSingleUserAge(Long id){
+		Long user = userRepository.getSingleUserAgeque(id);
+		return user;
+	}
 
 }
